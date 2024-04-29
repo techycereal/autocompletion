@@ -55,6 +55,8 @@ class Trie:
         Returns:
             list: A list of all words that start with the prefix.
         """
+        if prefix == "":
+            return []
         node = self.root
         for char in prefix:
             if char in node.children:
@@ -94,12 +96,12 @@ def complete(msg):
         list: A list of possible completions for the message.
     """
     return trie.find_completions(msg)
+
+with open('./words.txt', 'r') as file:
+	words = file.readlines()
+
 trie = Trie()
-trie.insert_string("hello")
-trie.insert_string("helium")
-trie.insert_string("help")
-trie.insert_string("helicopter")
-trie.insert_string("health")
-trie.insert_string("hat")
-trie.insert_string("at")
-trie.insert_string("ate")
+
+for word in words:
+	word = word.strip().lower()  # Preprocess the word
+	trie.insert_string(word)

@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from auto_complete import complete  # Import the complete function from your auto_complete module
+from typeahead import complete
 
 app = Flask(__name__)
 
 # Enable CORS for specific origin (http://localhost:5173)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 
 @app.route('/', methods=['POST', 'OPTIONS'])

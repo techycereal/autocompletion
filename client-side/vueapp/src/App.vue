@@ -18,7 +18,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      complete: '',      // Stores the current input value entered by the user.
+      complete: '',     // Stores the current input value entered by the user.
       completing: []   // Holds the list of autocomplete suggestions received from the server.
     };
   },
@@ -55,7 +55,7 @@ export default {
       this.complete = word;  // Update the input value with the selected word.
       this.completing = []
     }
-  }
+  },
 };
 </script>
 
